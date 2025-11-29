@@ -42,7 +42,7 @@
       {
         "network": "Resume",
         "icon": "qlementine-icons:resume-16",
-        "color": "#D44638",
+        "color": "#2bfbe1",
         "username": "lukesmith",
         "url": "https://personal-webapp-bucket.s3.us-west-2.amazonaws.com/Resume-LukeSmith.pdf"
       }
@@ -52,34 +52,46 @@
     {
       "name": "AWS Security",
       "position": "Software Developer II",
-      "location_type": "San Francisco",
-      "location": "CA, USA",
+      "location": "San Francisco CA",
       "url": "https://aws.com/",
       "startDate": "2021-03-31",
       "endDate": "2025-03-31",
-      "summary": "TBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBDTBD TBD",
+      "summary": "",
       "responsibilities": [
-        "TBD"
+        "Engineered automated agent validation platform using Python and React that tested 3 endpoint security agents across Windows, macOS, and Linux, catching 5+ critical production bugs eliminating 40+ hours of manual testing per release cycle and preventing faulty releases to 100K+ production endpoints. Becoming the standard testing suite for all new security endpoint agents to be deployed.",
+        "Architected hybrid cloud/physical testing infrastructure with configurable performance test suites and role-based UI, enabling 3 security teams to self-service validation with custom parameters, real-time resource monitoring, and automated reporting.",
+        "Engineered stream processing platform using Kinesis, Lambda, and DynamoDB to process 600K+ messages hourly from 100K+ endpoints, reducing infrastructure costs by 90% ($10K+ to <$1K monthly), Lambda execution by 90%, and third-party API usage by 80% while improving delivery latency from 15+ minutes to 3 seconds.",
+        "Developed platform API solving endpoint-to-user correlation reducing misfired security actions by 90% (200 to 20/min) and enabling 4 teams to leverage real-time availability data for time-critical security operations.",
+        "Developed API orchestration layer for secure employee offboarding platform, managing 2K+ monthly file retrieval requests with async workflows, agent-scripted file retrieval, and state management for security review queues serving 10+ part-time reviewers.",
+        "Engineered secure file handling pipeline with automated IP/malware filtering, manual review UI with file previews, role-based access controls, and comprehensive audit logging, ensuring compliant personal data release while emitting metrics on review times, request volume, and denial rates."
       ],
       "skills": {
-        "Go": "simple-icons:go",
+        "Python": "simple-icons:python",
+        "AWS": "simple-icons:amazonaws",
+        "Kubernetes": "simple-icons:kubernetes",
+        "Git": "mdi:git",
         "TypeScript": "simple-icons:typescript",
-        "Git": "mdi:git"
+        "CrowdStrike": "simple-icons:falcon",
+        "Go": "simple-icons:go"
       }
     },
     {
       "name": "AWS Security",
       "position": "Software Developer",
-      "location_type": "San Luis Obispo",
-      "location": "CA, USA",
+      "location": "San Luis Obispo CA",
       "url": "https://aws.com/",
       "startDate": "2018-09-01",
       "endDate": "2021-03-31",
       "summary": "TBD",
       "responsibilities": [
-        "TBD"
+        "Migrated physical network monitoring infrastructure to serverless AWS architecture, replacing ~200 physical hosts across ~100 locations with fixed-response ALBs deployed to 25 AWS regions, eliminating ~$144K in annual hosting costs and ~1 day of maintenance per sprint in operational overhead with equivalent test coverage.",
+        "Led maintenance and expansion of network meta-monitoring system, growing coverage from 3 to 7 security services and providing visibility into monitoring blind spots that detected weekly outages; delivered critical VPN endpoint health metrics during remote work transition enabling network team to maintain remote workforce stability.",
+        "Drove team adoption of development standards, including code practices, sprint optimizations, and design improvements such as drift detection and rolling deployments in production."
       ],
       "skills": {
+        "Python": "simple-icons:python",
+        "AWS": "simple-icons:amazonaws",
+        "CrowdStrike": "simple-icons:falcon",
         "TypeScript": "simple-icons:typescript",
         "Git": "mdi:git"
       }
@@ -87,31 +99,36 @@
     {
       "name": "Workday",
       "position": "Software Developer Intern",
-      "location_type": "Dublin",
-      "location": "CA, USA",
+      "location": "Dublin CA",
       "url": "https://workday.com/",
       "startDate": "2016-06-01",
       "endDate": "2017-09-30",
-      "summary": "TBD",
+      "summary": "ANTLR file-icons:antlr",
       "responsibilities": [
-        "TBD"
+        "Enhanced implementation of open-source language recognizer, ANTLR, used to define Workday’s Query Language and eventual data retrieval on Workday’s Platform.",
+        "Exposed REST-based Web Endpoints for allowing 3rd party systems to request data in support of Workday’s PaaS initiative.",
+        "Provided JavaScript front end to demonstrate REST Service API service capabilities.",
+        "All work followed standard software engineering practices such as documentation, code reviews and use of source control systems (VCS/Artifactory)."
       ],
       "skills": {
+        "Java": "ri:java-line",
+        "VCS": "ri:git-repository-line"
       }
     },
     {
       "name": "Microsoft",
       "position": "Software Engineer in Test Intern",
-      "location_type": "Seattle",
-      "location": "WA, USA",
-      "url": "https://workday.com/",
+      "location": "Seattle WA",
+      "url": "https://microsoft.com/",
       "startDate": "2014-06-01",
       "endDate": "2014-09-30",
       "summary": "TBD",
       "responsibilities": [
-        "TBD"
+        "As part of Windows Azure Active Directory Test team, I gained experience using MVC architecture pattern and front-end design.",
+        "My project was to complete an End to End application that would test the capabilities of Windows Azure. This involved planning, writing the specifications, and developing the application. "
       ],
       "skills": {
+        "Active Directory": "ri:microsoft-fill"
       }
     }
   ],
@@ -127,97 +144,186 @@
       "courses": []
     }
   ],
-  "certificates": [],
+  "certificates": [
+    {
+      "name": "GIAC Cloud Security Automation (GCSA)",
+      "date": "2025-01-24",
+      "issuer": "GIAC"
+    },
+    {
+      "name": "AWS Certified Developer – Associate",
+      "date": "2019-10-10",
+      "issuer": "Amazon Web Services"
+    }
+  ],
   "skills": [
     {
       "name": "AWS",
       "icon": "simple-icons:amazonaws",
       "level": "Advanced",
-      "keywords": ["Cloud Computing", "Backend", "Infrastructure"]
+      "keywords": [
+        "Cloud Computing",
+        "Backend",
+        "Infrastructure"
+      ]
     },
     {
       "name": "Python",
       "icon": "simple-icons:python",
       "level": "Advanced",
-      "keywords": ["Web Development", "Backend"]
+      "keywords": [
+        "Web Development",
+        "Fullstack",
+        "API"
+      ]
     },
     {
       "name": "Java",
       "icon": "ri:java-line",
       "level": "Advanced",
-      "keywords": ["Web Development", "Backend"]
+      "keywords": [
+        "Backend"
+      ]
     },
     {
       "name": "Claude AI",
       "icon": "ri:claude-line",
       "level": "Advanced",
-      "keywords": ["AI", "Artificial Intelligence", "Machine Learning"]
+      "keywords": [
+        "AI",
+        "Artificial Intelligence",
+        "Machine Learning"
+      ]
     },
     {
       "name": "ChatGPT",
       "icon": "simple-icons:openai",
       "level": "Advanced",
-      "keywords": ["AI", "Artificial Intelligence", "Machine Learning"]
+      "keywords": [
+        "AI",
+        "Artificial Intelligence",
+        "Machine Learning"
+      ]
+    },
+    {
+      "name": "CrowdStrike",
+      "icon": "simple-icons:falcon",
+      "level": "Advanced",
+      "keywords": [
+        "Endpoint Security",
+        "Security",
+        "Cloud Computing",
+        "Endpoint Detection and Response (EDR)"
+      ]
+    },
+    {
+      "name": "JSON",
+      "icon": "simple-icons:json",
+      "level": "Advanced",
+      "keywords": [
+        "Data",
+        "API"
+      ]
     },
     {
       "name": "Git",
       "icon": "mdi:git",
       "level": "Advanced",
-      "keywords": ["Version Control", "Collaboration", "Source Code"]
+      "keywords": [
+        "Version Control",
+        "Collaboration",
+        "Source Code"
+      ]
     },
     {
       "name": "GitHub",
       "icon": "mdi:github",
       "level": "Advanced",
-      "keywords": ["Version Control", "Collaboration", "Source Code", "Git"]
+      "keywords": [
+        "Version Control",
+        "Collaboration",
+        "Source Code",
+        "Git"
+      ]
     },
     {
       "name": "Docker",
       "icon": "mdi:docker",
       "level": "Intermediate",
-      "keywords": ["Virtual Environments", "Backend"]
+      "keywords": [
+        "Virtual Environments",
+        "Backend"
+      ]
     },
     {
       "name": "Postman",
       "icon": "simple-icons:postman",
       "level": "Advanced",
-      "keywords": ["API", "Testing", "Web Development", "Backend"]
+      "keywords": [
+        "API",
+        "Testing",
+        "Web Development",
+        "Backend"
+      ]
     },
     {
-      "name": "Shell",
-      "icon": "simple-icons:shell",
+      "name": "ZSH",
+      "icon": "simple-icons:zsh",
       "level": "Advanced",
-      "keywords": ["Scripting", "Automation"]
+      "keywords": [
+        "Scripting",
+        "Automation"
+      ]
     },
     {
       "name": "Linux",
       "icon": "simple-icons:linux",
       "level": "Intermediate",
-      "keywords": ["OS", "Scripting", "Automation"]
+      "keywords": [
+        "OS",
+        "Scripting",
+        "Automation"
+      ]
     },
     {
       "name": "Swagger",
       "icon": "simple-icons:swagger",
       "level": "Intermediate",
-      "keywords": ["API", "Documentation", "Web Development", "Backend"]
+      "keywords": [
+        "API",
+        "Documentation",
+        "Web Development",
+        "Backend"
+      ]
     },
     {
       "name": "Go-lang",
       "icon": "simple-icons:go",
       "level": "Intermediate",
-      "keywords": ["Web Development", "Frontend", "Static Generation"]
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Static Generation"
+      ]
     },
     {
       "name": "HTML",
       "icon": "simple-icons:html5",
       "level": "Beginner",
-      "keywords": ["Web Development", "Frontend"]
+      "keywords": [
+        "Web Development",
+        "Frontend"
+      ]
     },
     {
       "name": "CSS",
       "icon": "ri:css3-fill",
       "level": "Beginner",
-      "keywords": ["Web Development", "Frontend", "Responsive Design"]
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Responsive Design"
+      ]
     },
     {
       "name": "Tailwind",
@@ -234,7 +340,12 @@
       "name": "JavaScript",
       "icon": "simple-icons:javascript",
       "level": "Intermediate",
-      "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Backend",
+        "Fullstack"
+      ]
     },
     {
       "name": "TypeScript",
@@ -251,19 +362,33 @@
       "name": "Astro",
       "icon": "simple-icons:astro",
       "level": "Beginner",
-      "keywords": ["Web Development", "Frontend", "SSR", "Static Generation"]
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "SSR",
+        "Static Generation"
+      ]
     },
     {
       "name": "React",
       "icon": "simple-icons:react",
       "level": "Advanced",
-      "keywords": ["Web Development", "Frontend", "Static Generation"]
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Static Generation"
+      ]
     },
     {
       "name": "Node",
       "icon": "ri:nodejs-line",
       "level": "Intermediate",
-      "keywords": ["Web Development", "Backend", "JavaScript", "Server"]
+      "keywords": [
+        "Web Development",
+        "Backend",
+        "JavaScript",
+        "Server"
+      ]
     }
   ],
   "languages": [
@@ -274,20 +399,17 @@
   ],
   "projects": [
     {
-      "name": "pixelsaffron",
+      "name": "Obsidian Side Note",
       "isActive": true,
-      "description": "A landing page for a startup with beautiful design and smooth animations.",
+      "description": "Lightweight macOS notes app that floats over all windows and syncs instantly with your Obsidian vault. Designed to capture quick thoughts without leaving your current workspace.",
       "highlights": [
-        "GSAP animations",
-        "Beautiful design",
-        "Smooth animations"
+        "Smart design",
+        "Smooth integration with Obsidian"
       ],
       "stack": {
-        "Vue": "simple-icons:vuedotjs",
-        "GSAP": "simple-icons:greensock",
-        "Tailwind": "mdi:tailwind"
+        "Swift": "simple-icons:swift"
       },
-      "url": "https://pixelsaffron.in"
+      "url": "https://github.com/lukesmith96/obsidian_side_note"
     }
   ]
 }

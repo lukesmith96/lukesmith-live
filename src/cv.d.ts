@@ -58,7 +58,7 @@ interface Skill {
   keywords: Array<string>;
 }
 
-interface Certificate {
+interface C ertificate {
   name: string;
   date: DateStr;
   issuer: string;
