@@ -1,0 +1,165 @@
+---
+/**
+ * PCAP Upload Component with Native Drag & Drop
+ * Styled to match Luke Smith's portfolio theme
+ */
+---
+
+<div class="bg-skin-fill/50 backdrop-blur-sm border border-skin-muted/20 rounded-lg p-6">
+  <h2 class="text-2xl font-bold text-skin-base mb-4">Upload PCAP File</h2>
+
+  <div
+    id="dropzone"
+    class="border-2 border-dashed border-skin-muted/30 rounded-lg p-8 text-center cursor-pointer transition-all hover:border-skin-hue/50 bg-skin-fill/30"
+  >
+    <input type="file" id="fileInput" accept=".pcap,.pcapng" class="hidden" />
+
+    <div id="dropzoneContent">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-16 w-16 mx-auto mb-4 text-skin-hue"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width={2}
+          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+        />
+      </svg>
+      <p class="text-lg text-skin-base mb-2">Drag & drop a PCAP file here</p>
+      <p class="text-sm text-skin-muted mb-4">or</p>
+      <button type="button" class="px-6 py-2 bg-skin-button-accent hover:bg-skin-button-accent-hover text-white rounded-lg transition-colors font-medium" id="browseBtn">
+        Browse Files
+      </button>
+      <p class="text-xs text-skin-muted mt-4">.pcap or .pcapng files only</p>
+    </div>
+
+    <div id="uploadingContent" class="hidden">
+      <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-skin-hue border-r-transparent"></div>
+      <p class="mt-4 text-skin-muted">Uploading...</p>
+    </div>
+  </div>
+
+  <div id="uploadStatus" class="mt-4 hidden"></div>
+</div>
+
+<script>
+  import { uploadPcapFile } from '../../lib/pcap-api';
+
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('fileInput') as HTMLInputElement;
+  const browseBtn = document.getElementById('browseBtn');
+  const dropzoneContent = document.getElementById('dropzoneContent');
+  const uploadingContent = document.getElementById('uploadingContent');
+  const uploadStatus = document.getElementById('uploadStatus');
+
+  let isUploading = false;
+
+  // Browse button click
+  browseBtn?.addEventListener('click', () => {
+    fileInput?.click();
+  });
+
+  // Dropzone click
+  dropzone?.addEventListener('click', (e) => {
+    if (e.target === browseBtn) return;
+    if (!isUploading) {
+      fileInput?.click();
+    }
+  });
+
+  // File input change
+  fileInput?.addEventListener('change', (e) => {
+    const files = (e.target as HTMLInputElement).files;
+    if (files && files.length > 0) {
+      handleFile(files[0]);
+    }
+  });
+
+  // Drag and drop events
+  dropzone?.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    if (!isUploading) {
+      dropzone.classList.add('border-skin-hue', 'bg-skin-hue/5');
+    }
+  });
+
+  dropzone?.addEventListener('dragleave', () => {
+    if (!isUploading) {
+      dropzone.classList.remove('border-skin-hue', 'bg-skin-hue/5');
+    }
+  });
+
+  dropzone?.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('border-skin-hue', 'bg-skin-hue/5');
+
+    if (!isUploading) {
+      const files = e.dataTransfer?.files;
+      if (files && files.length > 0) {
+        handleFile(files[0]);
+      }
+    }
+  });
+
+  async function handleFile(file: File) {
+    // Validate file type
+    if (!file.name.endsWith('.pcap') && !file.name.endsWith('.pcapng')) {
+      showStatus('error', 'Please upload a .pcap or .pcapng file');
+      return;
+    }
+
+    isUploading = true;
+    dropzoneContent!.classList.add('hidden');
+    uploadingContent!.classList.remove('hidden');
+    uploadStatus!.classList.add('hidden');
+
+    try {
+      await uploadPcapFile(file);
+      showStatus('success', 'File uploaded successfully! Analysis in progress...');
+
+      // Dispatch custom event for dashboard to reload results
+      window.dispatchEvent(new CustomEvent('pcap-upload-complete'));
+
+      // Reset after 3 seconds
+      setTimeout(() => {
+        resetUpload();
+      }, 3000);
+    } catch (error: any) {
+      showStatus('error', `Upload failed: ${error.message}`);
+      resetUpload();
+    }
+  }
+
+  function showStatus(type: 'success' | 'error', message: string) {
+    if (!uploadStatus) return;
+
+    const bgColor = type === 'success' ? 'bg-green-500/10' : 'bg-red-500/10';
+    const borderColor = type === 'success' ? 'border-green-500/30' : 'border-red-500/30';
+    const iconColor = type === 'success' ? 'text-green-500' : 'text-red-500';
+
+    uploadStatus.className = `border-2 rounded-lg p-3 ${bgColor} ${borderColor}`;
+    uploadStatus.innerHTML = `
+      <div class="flex items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ${iconColor}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          ${type === 'success'
+            ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />'
+            : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />'
+          }
+        </svg>
+        <span class="text-sm text-skin-base">${message}</span>
+      </div>
+    `;
+    uploadStatus.classList.remove('hidden');
+  }
+
+  function resetUpload() {
+    isUploading = false;
+    dropzoneContent!.classList.remove('hidden');
+    uploadingContent!.classList.add('hidden');
+    if (fileInput) fileInput.value = '';
+  }
+</script>

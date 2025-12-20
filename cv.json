@@ -9,7 +9,7 @@
     "image": "/pfp.jpeg",
     "email": "lukesmith@live.com",
     "url": "https://lukesmith.live",
-    "summary": "My fascination for technology started early, self teaching Java in 8th Grade and coding in Minecraft, which led to internships at Microsoft and Workday. In this fast moving environment I am always seeking to learn, whether its operating system design, distributed systems, or advanced data structures. My motivation comes from making technology work for people and solving problems through the power of software.",
+    "summary": "I fell in love with software engineering because every problem has multiple solutions and finding the right one requires both creativity amid constraint.\n\nMost of my career has been in security-focused development, where I've learned to balance moving fast with building things right. Working on Endpoint Detection & Response (EDR) tooling taught me what it really means to design for scale, not just handling millions of events, but doing it reliably when systems and threats are constantly evolving. I'm drawn to environments where curiosity isn't just welcomed, it's required.\n\nI bring the same security-first mindset to how I work with teams: building trust through transparency, clear communication, and shared accountability.",
     "theme": "platinum",
     "location": {
       "address": "",
