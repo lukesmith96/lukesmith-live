@@ -8,7 +8,7 @@ const millisecondsInYear = 1000 * 60 * 60 * 24 * 365
 
 <Section className={Astro.props.className} title="Experience">
   <ul class="flex flex-col">
-    {work.map(({ name, startDate, endDate, position, summary, responsibilities,  url, skills, location, location_type }) => {
+    {work.map(({ name, startDate, endDate, position, summary, responsibilities,  url, skills, location }) => {
       const startYear = new Date(startDate).getFullYear()
       const endYear = endDate != null ? new Date(endDate).getFullYear() : "Present"
       const timeLapse = (endDate!=null?new Date(endDate).getTime():new Date().getTime()) - new Date(startDate).getTime()
@@ -42,9 +42,9 @@ const millisecondsInYear = 1000 * 60 * 60 * 24 * 365
                   </span>
                 </span>
               </h3>
-              {(location || location_type) && (
+              {(location) && (
                 <div class="text-xs text-skin-muted">
-                  {location} {location && location_type && '-'} {location_type}
+                  {location} {location && '-'}
                 </div>
               )}
               <div class="mt-4  print:gap-0 flex flex-col gap-4 print:text-xs text-sm">
