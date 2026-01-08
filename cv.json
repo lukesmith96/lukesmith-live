@@ -58,20 +58,26 @@
       "endDate": "2025-03-31",
       "summary": "",
       "responsibilities": [
-        "Engineered automated agent validation platform using Python and React that tested 3 endpoint security agents across Windows, macOS, and Linux, catching 5+ critical production bugs eliminating 40+ hours of manual testing per release cycle and preventing faulty releases to 100K+ production endpoints. Becoming the standard testing suite for all new security endpoint agents to be deployed.",
-        "Architected hybrid cloud/physical testing infrastructure with configurable performance test suites and role-based UI, enabling 3 security teams to self-service validation with custom parameters, real-time resource monitoring, and automated reporting.",
-        "Engineered stream processing platform using Kinesis, Lambda, and DynamoDB to process 600K+ messages hourly from 100K+ endpoints, reducing infrastructure costs by 90% ($10K+ to <$1K monthly), Lambda execution by 90%, and third-party API usage by 80% while improving delivery latency from 15+ minutes to 3 seconds.",
-        "Developed platform API solving endpoint-to-user correlation reducing misfired security actions by 90% (200 to 20/min) and enabling 4 teams to leverage real-time availability data for time-critical security operations.",
-        "Developed API orchestration layer for secure employee offboarding platform, managing 2K+ monthly file retrieval requests with async workflows, agent-scripted file retrieval, and state management for security review queues serving 10+ part-time reviewers.",
-        "Engineered secure file handling pipeline with automated IP/malware filtering, manual review UI with file previews, role-based access controls, and comprehensive audit logging, ensuring compliant personal data release while emitting metrics on review times, request volume, and denial rates."
+        "Architected automated agent validation platform using AWS, Python, and React, validating EDR agent versions across Windows, macOS, and Linux. Catching critical production bugs, eliminating 40+ hours of manual testing per release cycle, and preventing faulty releases to 100K+ production endpoints.",
+        "Scaled platform adoption to be the standard for new endpoint agent deployments. Through configurable test suites, role-based self-service UI, and hybrid cloud/physical infrastructure. This enabled accurate user environment validation, real-time resource monitoring, and automated reporting.",
+        "Identified inefficient endpoint online notification service querying a bloated data stream of 6M messages per hour from 100k+ endpoints. Developed stream processing platform using Kinesis, Lambda, and DynamoDB, reducing P80 delivery latency from 15 minutes to 3 seconds, infrastructure costs by 90% ($10K+ to <$1K monthly), third-party API usage by 50%, with a 10x reduction in messages.",
+        "Expanded endpoint online service usage by making it real time and including data teams wanted to use, and delivering it efficiently by implementing a content based Pub/Sub architecture.",
+        "Developed off boarding platform designed to protect corporate IP, while providing employee personal data access. Supported company wide reach through async workflows, automating agent-based retrieval, minimizing turn around time, and limiting IP exposure.",
+        "Implemented secure file handling pipeline with: automated IP filtering, manual review UI with file previews, role-based access controls, and comprehensive audit logging. Enabling compliant personal data release while emitting metrics on review times, request volumes, and denial rates.",
+        "Identified resource constraint that would halt development within 3 months, migrated IaC to AWS CDK nested Stacks reducing code complexity by 25% (total lines), and allowing the team to meet delivery dates.",
+        "Mentored 3 junior software and systems engineers on AWS best practices, Python development standards, and security tooling design, with all 3 promoted or transitioned to Software Developer within 18 months.",
+        "Provided technical leadership for adjacent security tooling team, providing technical guidance, code reviews, and security assessments on all of their services."
       ],
       "skills": {
         "Python": "simple-icons:python",
         "AWS": "simple-icons:amazonaws",
-        "Kubernetes": "simple-icons:kubernetes",
         "Git": "mdi:git",
         "TypeScript": "simple-icons:typescript",
         "CrowdStrike": "simple-icons:falcon",
+        "Kubernetes": "simple-icons:kubernetes",
+        "Docker": "mdi:docker",
+        "Packer": "simple-icons:packer",
+        "Ansible": "simple-icons:ansible",
         "Go": "simple-icons:go"
       }
     },
@@ -82,11 +88,10 @@
       "url": "https://aws.com/",
       "startDate": "2018-09-01",
       "endDate": "2021-03-31",
-      "summary": "TBD",
+      "summary": "",
       "responsibilities": [
-        "Migrated physical network monitoring infrastructure to serverless AWS architecture, replacing ~200 physical hosts across ~100 locations with fixed-response ALBs deployed to 25 AWS regions, eliminating ~$144K in annual hosting costs and ~1 day of maintenance per sprint in operational overhead with equivalent test coverage.",
-        "Led maintenance and expansion of network meta-monitoring system, growing coverage from 3 to 7 security services and providing visibility into monitoring blind spots that detected weekly outages; delivered critical VPN endpoint health metrics during remote work transition enabling network team to maintain remote workforce stability.",
-        "Drove team adoption of development standards, including code practices, sprint optimizations, and design improvements such as drift detection and rolling deployments in production."
+        "Migrated physical host network infrastructure to serverless AWS architecture, replacing ~200 physical hosts across ~100 locations with fixed-response ALBs deployed to 25 AWS regions, eliminating 90% of annual hosting costs reduced per sprint operational overhead.",
+        "Led maintenance and expansion of botnet-like network monitoring system, growing coverage from 3 to 7 security services and providing visibility into monitoring blind spots that detected weekly outages; delivered critical VPN endpoint health metrics during remote work transition enabling network team to maintain remote workforce stability."
       ],
       "skills": {
         "Python": "simple-icons:python",
@@ -388,6 +393,66 @@
         "Backend",
         "JavaScript",
         "Server"
+      ]
+    },
+    {
+      "name": "Kubernetes",
+      "icon": "simple-icons:kubernetes",
+      "level": "Intermediate",
+      "keywords": [
+        "Container Orchestration",
+        "DevOps",
+        "Cloud Computing"
+      ]
+    },
+    {
+      "name": "Terraform",
+      "icon": "simple-icons:terraform",
+      "level": "Intermediate",
+      "keywords": [
+        "Infrastructure as Code",
+        "Cloud Computing",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Ansible",
+      "icon": "simple-icons:ansible",
+      "level": "Intermediate",
+      "keywords": [
+        "Configuration Management",
+        "Automation",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "Packer",
+      "icon": "simple-icons:packer",
+      "level": "Intermediate",
+      "keywords": [
+        "Image Creation",
+        "Automation",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "CI/CD",
+      "icon": "mdi:gitlab",
+      "level": "Intermediate",
+      "keywords": [
+        "Continuous Integration",
+        "Continuous Deployment",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "REST API",
+      "icon": "mdi:api",
+      "level": "Advanced",
+      "keywords": [
+        "API",
+        "Web Development",
+        "Backend"
       ]
     }
   ],
